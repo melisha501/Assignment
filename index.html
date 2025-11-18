@@ -1,145 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melisha Thapa - Portfolio</title>
-
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: #4CAF50;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        /* FIXED IMAGE STYLE (MAIN PART) */
-        header img {
-            width: 350px;          /* width set */
-            height: 350px;         /* fixed height */
-            object-fit: cover;     /* perfect crop */
-            border-radius: 10px;   /* optional design */
-            display: block;
-            margin: 20px auto;
-        }
-
-        header p {
-            font-size: 1.2em;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #333;
-        }
-
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            background: #4CAF50;
-        }
-
-        /* Sections */
-        section {
-            padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2em;
-            color: #4CAF50;
-        }
-
-        .about {
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-
-        @media(max-width: 600px){
-            nav {
-                flex-direction: column;
-            }
-            header img {
-                width: 90%;
-                height: 300px;
-            }
-        }
-    </style>
-
+    <title>My Portfolio</title>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Melisha Thapa</h1>
-        <img src="photo.jpg" alt="melisha">
-        <p>Welcome to my personal portfolio</p>
-    </header>
-
-    <!-- Navigation -->
+<header>
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
+        <a href="#">melishathapa/</a>
+        <a href="#">home/</a>
+        <a href="#">short bio/</a>
+        <a href="#">education/</a>
+        <a href="#">interest/</a>
+        <a href="#">contact/</a>
     </nav>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Melisha Thapa, a passionate web developer and designer. 
-        I love creating beautiful and functional websites. Nature inspires me, 
-        and I enjoy integrating elements of it, like rivers and landscapes, into my work.</p>
-    </section>
+<main>
+    <h2>Hello I'm</h2>
+    <h1>Melisha Thapa</h1>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p style="text-align: center;">Email: <a href="mailto:melisha@example.com">melisha@example.com</a></p>
-        <p style="text-align: center;">Phone: +123 456 7890</p>
-    </section>
+    <aside>
+        Hello, I'm Melisha Thapa, a Computer Science major currently studying in the 2nd year 
+        at Biratnagar International College.
+    </aside>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Melisha Thapa. All rights reserved.</p>
-    </footer>
+    <img src="photo.jpg" width="150">
+
+    <br>
+    <button>About me</button>
+    <button>Projects</button>
+
+    <h2>About Me</h2>
+    <p>
+        Hello! My name is Melisha Thapa. I am currently in my second year of 
+        BSc (Hons) Computer Science at Biratnagar International College.
+        I have always been passionate about technology and the endless possibilities 
+        it offers to solve real-world problems.
+        <br><br>
+        I am still at the beginning of my programming journey, but I have developed 
+        a strong interest in web development. I have a foundational understanding of 
+        HTML and I am excited to continue improving my skills in CSS, JavaScript, and 
+        many other areas in the future.
+    </p>
+
+    <h1>Qualifications</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Board</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BSc (Hons) Computer Science</td>
+                <td>Biratnagar International College</td>
+                <td>Undergraduate</td>
+                <td>Currently Studying</td>
+            </tr>
+            <tr>
+                <td>High School Diploma</td>
+                <td>Merryland College</td>
+                <td>NEB</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Secondary Education</td>
+                <td>Arpan English School</td>
+                <td>NEB</td>
+                <td>A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Interests, Experience & Hobbies</h1>
+    <div class="interest-section">
+        <h2>My Interests & Experience</h2>
+        <p>
+            I am passionate about technology and web development. I have around 
+            1 year of learning experience in HTML, CSS, and basic JavaScript, and I enjoy 
+            creating simple, user-friendly designs.
+            <br><br>
+            I am also interested in programming and problem-solving, and I love exploring 
+            new technologies that help me grow as a computer science student.
+            <br><br>
+            Besides academics, I enjoy reading, writing, photography, and discovering 
+            new places. These hobbies keep me creative and motivated throughout 
+            my learning journey.
+        </p>
+    </div>
+
+</main>
+
+<footer>
+    <div class="left">
+        <p>Melisha Thapa</p>
+    </div>
+</footer>
 
 </body>
 </html>
-
