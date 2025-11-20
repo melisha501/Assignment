@@ -1,13 +1,12 @@
 /* =====================================
    MODERN PREMIUM PORTFOLIO CSS
-   (Your colors + Modern glass effect)
 ===================================== */
 
 :root {
-  --accent: #0ea5a1;      /* your main teal */
+  --accent: #0ea5a1;
   --accent-soft: #14b8ad;
-  --bg: #0f172a;          /* dark navy */
-  --card: #101b34;        /* modern card */
+  --bg: #0f172a;
+  --card: #101b34;
   --text: #e6edf8;
   --muted: #98a4c5;
   --radius: 16px;
@@ -34,55 +33,73 @@ body {
 
 
 
+/* FORCE IMAGE SAFETY (Fix GitHub image stretch issue) */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
 /* =====================================
-   HERO SECTION (modern + clean)
+   HERO SECTION
 ===================================== */
 
 .hero-section {
   text-align: center;
   padding: 70px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .profile-orb {
   width: 160px;
   height: 160px;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow);
-  border: 3px solid rgba(255,255,255,0.06);
+  border: 3px solid rgba(255,255,255,0.08);
 }
 
 .profile-orb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;   /* FULL FIX */
+  object-position: center;
 }
 
 .hero-title {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   color: var(--muted);
   font-size: 18px;
 }
 
 .hero-name {
   margin: 4px 0 12px;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 700;
 }
 
 .intro {
   max-width: 650px;
   margin: auto;
-  opacity: 0.9;
+  opacity: 0.95;
+  font-size: 17px;
 }
+
+
+
+/* =====================================
+   BUTTON GROUP
+===================================== */
 
 .btn-group {
   margin-top: 20px;
 }
 
 .btn-group button {
-  padding: 12px 20px;
+  padding: 12px 22px;
   margin: 0 6px;
   background: var(--accent);
   border: none;
@@ -91,11 +108,12 @@ body {
   cursor: pointer;
   color: #042b29;
   transition: 0.25s;
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 25px rgba(14,165,161,0.35);
 }
 
 .btn-group button:hover {
   transform: scale(1.07);
+  filter: brightness(1.15);
 }
 
 
@@ -112,7 +130,8 @@ body {
 
 .section h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 28px;
 }
 
 
@@ -127,21 +146,27 @@ table {
   background: var(--card);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 th, td {
   padding: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+th {
+  background: rgba(255,255,255,0.05);
+  font-weight: 700;
 }
 
 
 
 /* =====================================
-   SKILLS (Smooth animation)
+   SKILLS
 ===================================== */
 
 .skill-box {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .skill-box p {
@@ -155,12 +180,13 @@ th, td {
   border-radius: 50px;
   width: 0;
   transition: width 1.3s ease;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
 
 
 /* =====================================
-   PROJECT CARDS (Modern)
+   PROJECT CARDS
 ===================================== */
 
 .projects {
@@ -179,11 +205,11 @@ th, td {
   box-shadow: var(--shadow);
   cursor: pointer;
   transition: 0.3s ease;
-  font-weight: 600;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  box-shadow: 0 12px 45px rgba(14,165,161,0.25);
 }
 
 
@@ -222,11 +248,12 @@ video, audio, canvas {
 form input, form textarea {
   width: 80%;
   padding: 14px;
-  margin: 6px 0;
+  margin: 8px 0;
   border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,0.08);
   background: var(--card);
   color: var(--text);
+  font-size: 16px;
 }
 
 form button {
@@ -238,6 +265,7 @@ form button {
   font-weight: 600;
   box-shadow: var(--shadow);
   cursor: pointer;
+  margin-top: 10px;
 }
 
 
@@ -257,6 +285,7 @@ form button {
   cursor: pointer;
   color: #042b29;
   font-weight: 700;
+  box-shadow: var(--shadow);
 }
 
 .top-btn {
@@ -280,7 +309,8 @@ form button {
 footer {
   text-align: center;
   padding: 30px;
-  opacity: 0.6;
+  opacity: 0.65;
+  font-size: 14px;
 }
 
 
