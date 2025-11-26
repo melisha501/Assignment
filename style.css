@@ -141,30 +141,18 @@ th {
 
 /* ===================================== PROJECT CARDS ===================================== */
 
+/* ===================================== PROJECT CARDS (FIXED) ===================================== */
+
 .projects {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 
 .project-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.project-card {
-    width: 250px;
-    padding: 20px;
     background: var(--card);
+    padding: 20px;
     border-radius: var(--radius);
     text-align: center;
     cursor: pointer;
@@ -178,7 +166,7 @@ th {
 
 .project-img {
     width: 100%;
-    height: 310px; /* Height increased */
+    height: 260px;
     object-fit: cover;
     border-radius: var(--radius);
 }
