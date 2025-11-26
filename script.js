@@ -1,120 +1,103 @@
-/* =======================================================
-   SKILL BAR ANIMATION
-======================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-  const skillBars = document.querySelectorAll(".skill-bar");
-  skillBars.forEach(bar => {
-    const target = bar.dataset.skill;
-    bar.style.width = target + "%";
-  });
-});
+/* SKILL BAR ANIMATION */
+const skillBars = document.querySelectorAll(".skill-bar");
 
+function animateSkills() {
+    skillBars.forEach(bar => {
+        bar.style.width = bar.dataset.skill + "%";
+    });
+}
+window.addEventListener("load", animateSkills);
 
-/* =======================================================
-   CONTACT FORM: VALIDATION + SAVE TO LOCALSTORAGE + REDIRECT
-======================================================= */
+/* CONTACT FORM */
 const form = document.getElementById("contactForm");
 
 if (form) {
-  form.addEventListener("submit", e => {
-    e.preventDefault();
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const msgBox = document.getElementById("msg");
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
 
-    if (!name || !email || !message) {
-      msgBox.textContent = "All fields are required!";
-      return;
-    }
-
-    // Save to Local Storage
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("message", message);
-
-    window.location.href = "form-details.html";
-  });
+        document.getElementById("msg").innerText =
+            (!name || !email || !message)
+            ? "All fields are required!"
+            : "Message sent successfully!";
+    });
 }
 
-
-/* =======================================================
-   PROJECT BUTTON REDIRECTS
-======================================================= */
-const project1 = document.getElementById("p1");
-const project2 = document.getElementById("p2");
-
-if (project1)
-  project1.onclick = () => window.open("https://your-first-project-link.com", "_blank");
-
-if (project2)
-  project2.onclick = () => window.open("https://your-second-project-link.com", "_blank");
-
-
-
-/* =======================================================
-   CANVAS DRAW
-======================================================= */
-const canvas = document.getElementById("myCanvas");
-
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-
-  ctx.fillStyle = "cyan";
-  ctx.fillRect(20, 20, 200, 100);
-
-  ctx.fillStyle = "black";
-  ctx.font = "20px Arial";
-  ctx.fillText("Hello Melisha!", 40, 80);
-}
-
-
-
-/* =======================================================
-   DARK/LIGHT MODE
-======================================================= */
-const themeBtn = document.getElementById("themeBtn");
-
-if (themeBtn) {
-  themeBtn.onclick = () => {
-    document.body.classList.toggle("light-mode");
-  };
-}
-
-
-
-/* =======================================================
-   BACK TO TOP BUTTON
-======================================================= */
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-  if (topBtn) {
-    topBtn.style.display = window.scrollY > 200 ? "block" : "none";
-  }
+// Project 1 → Weather App Page
+document.getElementById("p1").addEventListener("click", function () {
+    window.location.href = "https://melisha501.github.io/weatherapp/"; 
 });
 
-if (topBtn) {
-  topBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+// Project 2 → Portfolio URL
+document.getElementById("p2").addEventListener("click", function () {
+    window.open("https://melisha501.github.io/Assignment/", "_blank");
+});
+
+/* CANVAS */
+const c = document.getElementById("myCanvas");
+
+if (c) {
+    const ctx = c.getContext("2d");
+    ctx.fillStyle = "#00c7b7";
+    ctx.fillRect(20, 20, 260, 110);
+    ctx.fillStyle = "#002523";
+    ctx.font = "22px Arial";
+    ctx.fillText("Hello Melishaaa", 40, 80);
 }
 
+/* DARK MODE */
+const darkBtn = document.getElementById("darkBtn");
+if (darkBtn) {
+    darkBtn.onclick = () => {
+        document.body.classList.toggle("dark-mode");
+    };
+}
 
+/* SCROLL TO TOP */
+const topBtn = document.getElementById("topBtn");
+window.onscroll = () => {
+    if (topBtn) topBtn.style.display = window.scrollY > 250 ? "block" : "none";
+};
 
-/* =======================================================
-   IMAGE SLIDER
-======================================================= */
-const images = ["img1.jpg", "img2.jpg", "img3.jpg"];
-let index = 0;
+if (topBtn) {
+    topBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+}
+/* IMAGE SLIDER — FINAL FIXED */
+const sliderImages = [
+    "img1.jpg",
+    "img2.jpg",
+    "img3.jpg",
+    
+];
 
-const slideImage = document.getElementById("slideImage");
-const nextBtn = document.getElementById("nextBtn");
+let sliderIndex = 0;
 
-if (nextBtn && slideImage) {
-  nextBtn.onclick = () => {
-    index = (index + 1) % images.length;
-    slideImage.src = images[index];
-  };
+const slideImg = document.getElementById("slideImage");
+const nextButton = document.getElementById("nextBtn");
+
+if (slideImg && nextButton) {
+
+    nextButton.onclick = () => {
+
+        slideImg.classList.add("fade-out");
+
+        setTimeout(() => {
+
+            sliderIndex = (sliderIndex + 1) % sliderImages.length;
+            slideImg.src = sliderImages[sliderIndex];
+
+            slideImg.classList.remove("fade-out");
+            slideImg.classList.add("fade-in");
+
+            setTimeout(() => {
+                slideImg.classList.remove("fade-in");
+            }, 300);
+
+        }, 300);
+    };
 }

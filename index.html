@@ -10,69 +10,45 @@
 
 <body>
 
-    <!-- ============================
-         HERO SECTION
-    ============================= -->
+    <!-- HERO SECTION -->
     <header class="hero-section">
-
         <div class="profile-orb">
             <img src="photo.jpg" alt="Melisha Photo">
         </div>
-
         <p class="hero-title">Hello I'm</p>
         <h1 class="hero-name">Melisha Thapa</h1>
-
-        <!-- SHORT INTRO -->
         <p class="intro">
-            I'm a 2nd year BSc (Hons) Computer Science student at Biratnagar International College,
-            learning front-end development and creating clean, modern and user-friendly websites.
+            I'm a 2nd year BSc (Hons) Computer Science student at Biratnagar International College.
+            I love creating clean, modern and user-friendly websites and improving my frontend skills.
         </p>
-
         <div class="btn-group">
             <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">About Me</button>
             <button onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'});">Projects</button>
         </div>
-
     </header>
 
-
-
-
-    <!-- ============================
-         ABOUT ME (EXPLAIN SECTION)
-    ============================= -->
+    <!-- ABOUT ME -->
     <section id="about" class="section">
         <h2>About Me</h2>
-
         <p>
-            Hello! I'm <strong>Melisha Thapa</strong>, currently in my 2nd year of 
-            BSc (Hons) Computer Science at Biratnagar International College. I have a strong
-            interest in web development and enjoy building modern, responsive and clean-looking
-            websites.
+            Hello! I'm <strong>Melisha Thapa</strong>, currently in my 2nd year of
+            BSc (Hons) Computer Science at Biratnagar International College.
+            I enjoy learning web development, designing modern UI and building responsive websites.
         </p>
-
         <p>
-            My learning journey started about a year ago, when I began experimenting with HTML
-            and CSS. Over time, I explored JavaScript and started creating interactive features
-            like sliders, animations, theme toggles and form validation. This one-year journey
-            has helped me build confidence and understand how frontend development works.
+            I started learning HTML and CSS about a year ago. Later, I explored JavaScript,
+            animations, sliders, form validation and theme toggles.
+            This 1-year coding journey has helped me build confidence and understand how the web works.
         </p>
-
         <p>
-            I love combining creativity with technology, and I'm always excited to learn new
-            tools, improve my designs and work on projects that help me grow as a developer.
+            I love combining creativity with technology and I'm always excited to learn more,
+            upgrade my skills and work on new projects that help me grow as a developer.
         </p>
     </section>
 
-
-
-
-    <!-- ============================
-         QUALIFICATIONS
-    ============================= -->
+    <!-- QUALIFICATIONS -->
     <section class="section">
         <h2>Qualifications</h2>
-
         <table>
             <thead>
                 <tr>
@@ -82,7 +58,6 @@
                     <th>Marks</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr>
                     <td>BSc (Hons) Computer Science</td>
@@ -90,14 +65,12 @@
                     <td>Undergraduate</td>
                     <td>Currently Studying</td>
                 </tr>
-
                 <tr>
                     <td>High School Diploma</td>
                     <td>Merryland College</td>
                     <td>NEB</td>
                     <td>A</td>
                 </tr>
-
                 <tr>
                     <td>Secondary Education</td>
                     <td>Arpan English School</td>
@@ -108,118 +81,83 @@
         </table>
     </section>
 
-
-
-
-    <!-- ============================
-         SKILLS
-    ============================= -->
+    <!-- SKILLS -->
     <section class="section">
         <h2>My Skills</h2>
-
         <div class="skill-box">
             <p>HTML</p>
             <div class="skill-bar" data-skill="90"></div>
         </div>
-
         <div class="skill-box">
             <p>CSS</p>
             <div class="skill-bar" data-skill="75"></div>
         </div>
-
         <div class="skill-box">
             <p>JavaScript</p>
             <div class="skill-bar" data-skill="45"></div>
         </div>
     </section>
 
+   
+<section class="section">
+    <h2>Projects</h2>
+    <div class="projects">
 
-
-
-    <!-- ============================
-         PROJECTS
-    ============================= -->
-    <section class="section">
-        <h2>Projects</h2>
-
-        <div class="projects">
-            <div class="project-card" id="p1">First Project</div>
-            <div class="project-card" id="p2">Second Project</div>
+        <!-- PROJECT 1 – Weather App -->
+        <div class="project-card" id="p1">
+            <h3>Project 1 - my Weather App</h3>
+            <img src="weather.jpg" class="project-img" alt="Weather App">
         </div>
-    </section>
 
+        <!-- PROJECT 2 – My Portfolio -->
+        <div class="project-card" id="p2">
+            <h3>Project 2 - My Portfolio</h3>
+            <img src="portfolio.jpg" class="project-img" alt="My Portfolio">
+        </div>
 
+    </div>
+</section>
 
-
-    <!-- ============================
-         VIDEO / AUDIO / CANVAS
-    ============================= -->
+    <!-- MEDIA -->
     <section class="section">
         <h2>Video, Audio & Canvas</h2>
-
         <video width="300" controls>
-            <source src="video.mp4" type="video/mp4">
+            <source src="dance.mp4" type="video/mp4">
         </video>
-
         <audio controls>
             <source src="audio.mp3" type="audio/mpeg">
         </audio>
-
         <canvas id="myCanvas" width="300" height="150"></canvas>
     </section>
 
-
-
-
-    <!-- ============================
-         IMAGE SLIDER
-    ============================= -->
+    <!-- SLIDER -->
     <section class="section">
         <h2>Image Slider</h2>
-
-        <img id="slideImage" src="img1.jpg" width="300">
-        <br>
-        <button id="nextBtn">Next</button>
+        <div class="slider-container">
+            <img id="slideImage" src="img1.jpg">
+            <button id="nextBtn">Next</button>
+        </div>
     </section>
 
-
-
-
-    <!-- ============================
-         CONTACT FORM
-    ============================= -->
+    <!-- CONTACT -->
     <section class="section">
         <h2>Contact Me</h2>
-
         <form id="contactForm">
             <input type="text" id="name" placeholder="Your Name">
             <input type="email" id="email" placeholder="Your Email">
             <textarea id="message" placeholder="Your Message"></textarea>
-
             <button type="submit">Submit</button>
             <p id="msg"></p>
         </form>
-
     </section>
 
-
-
-
-    <!-- ============================
-         DARK MODE + TOP BUTTON
-    ============================= -->
-    <button id="themeBtn" class="theme-toggle">Theme</button>
+    <button id="darkBtn" class="theme-toggle">Dark Mode</button>
     <button id="topBtn" class="top-btn">↑</button>
-
-
-
 
     <footer>
         <p>© 2025 Melisha Thapa</p>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
