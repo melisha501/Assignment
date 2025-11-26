@@ -8,29 +8,44 @@ function animateSkills() {
 }
 window.addEventListener("load", animateSkills);
 
-/* CONTACT FORM */
-const form = document.getElementById("contactForm");
+// CONTACT FORM LOCAL STORAGE SAVE
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-if (form) {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
 
-        let name = document.getElementById("name").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let message = document.getElementById("message").value.trim();
+    if (name === "" || email === "" || message === "") {
+        document.getElementById("msg").textContent = "Please fill all fields!";
+        return;
+    }
 
-        document.getElementById("msg").innerText =
-            (!name || !email || !message)
-            ? "All fields are required!"
-            : "Message sent successfully!";
-    });
-}
+    // Create object
+    let formData = {
+        name: name,
+        email: email,
+        message: message,
+        time: new Date().toLocaleString()
+    };
+
+    // Save to local storage
+    localStorage.setItem("contactFormData", JSON.stringify(formData));
+
+    // Success message
+    document.getElementById("msg").textContent = "Message sent successfully!";
+
+    // Clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+});
+
 
 // Project 1 → Weather App Page
 document.getElementById("p1").addEventListener("click", function () {
-    window.location.href = "https://melisha501.github.io/weatherapp/"; 
-});
-
+    window.location.href = " https://melisha501.github.io/weatherapp/"; 
+}); 
 // Project 2 → Portfolio URL
 document.getElementById("p2").addEventListener("click", function () {
     window.open("https://melisha501.github.io/Assignment/", "_blank");
